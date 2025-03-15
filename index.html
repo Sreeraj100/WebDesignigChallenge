@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti Mandhana | Cricket Star</title>
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #0052cc;
+            --secondary-color: #ff6b6b;
+            --accent-color: #ffd700;
+            --dark-color: #1a1a2e;
+            --light-color: #f5f5f5;
+            --text-color: #333;
+            --text-light: #f5f5f5;
+            --transition: all 0.3s ease-in-out;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800') center/cover no-repeat; */
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background-image: url(Background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-btns {
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero-btns .btn:first-child {
+            margin-right: 1rem;
+            background: var(--secondary-color);
+        }
+
+        .hero-btns .btn:first-child:hover {
+            background: var(--primary-color);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-color);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transform: rotate(-2deg);
+            transition: var(--transition);
+        }
+
+        .about-img:hover {
+            transform: rotate(0) scale(1.02);
+        }
+
+        .about-content h2 {
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .facts-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .fact-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .fact-item:hover {
+            transform: translateY(-10px);
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .fact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .fact-item:hover .fact-number {
+            color: var(--accent-color);
+        }
+
+        /* Career Highlights */
+        .career {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+        }
+
+        .career .section-title::after {
+            background: var(--secondary-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 0 40px 70px 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding: 0 0 70px 40px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            color: var(--text-color);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Statistics Section */
+        .statistics {
+            background: url('Photo2.jpeg') center/cover no-repeat;
+            position: relative;
+        }
+
+        .statistics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 82, 204, 0.85);
+        }
+
+        .stats-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            color: var(--text-light);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-title {
+            color: var(--text-light);
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        /* Awards Section */
+        .awards {
+            background-color: var(--light-color);
+        }
+
+        .awards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .award-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .award-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .award-card:hover .award-img img {
+            transform: scale(1.1);
+        }
+
+        .award-content {
+            padding: 1.5rem;
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-year {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-control:focus {
+            outline: 2px solid var(--primary-color);
+        }
+
+        textarea.form-control {
+            resize: none;
+            height: 150px;
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            background: black;
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                margin-bottom: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-container,
+            .awards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: white;
+                width: 70%;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: var(--transition);
+                box-shadow: var(--box-shadow);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-left: 70px;
+            }
+
+            .timeline-item::after,
+            .timeline-item:nth-child(even)::after {
+                left: 15px;
+            }
+
+            .stats-container,
+            .gallery-container,
+            .awards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Smriti Mandhana</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#statistics">Stats</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Smriti Mandhana</h1>
+            <p>Indian Cricket Star | ICC Women's Cricketer of the Year | Style Icon</p>
+            <div class="hero-btns">
+                <a href="#career" class="btn">Career Highlights</a>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Smriti</h2>
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="profile.webp" alt="Smriti Mandhana">
+                </div>
+                <div class="about-content">
+                    <h2>The Elegant Southpaw</h2>
+                    <p>Born on July 18, 1996, in Mumbai, Smriti Mandhana is an Indian cricketer who plays for the Indian women's national team. Known for her elegant stroke play and leadership qualities, she has established herself as one of the premier batswomen in international cricket.</p>
+                    <p>At just 9 years old, Smriti was selected in the Maharashtra Under-15 team. At 11, she was picked for the Maharashtra Under-19 team. Her international debut came in 2013 against Bangladesh, and she hasn't looked back since.</p>
+                    <p>Beyond her cricketing abilities, Smriti is known for her calm demeanor, humility, and dedication to promoting women's cricket globally.</p>
+                    <div class="facts-box">
+                        <div class="fact-item">
+                            <div class="fact-number">2013</div>
+                            <p>International Debut</p>
+                        </div>
+                        <div class="fact-item">
+                            <div class="fact-number">27</div>
+                            <p>Age</p>
+                        </div>
+                        <div class="fact-item">
+                            <div class="fact-number">2</div>
+                            <p>ICC Awards</p>
+                        </div>
+                        <div class="fact-item">
+                            <div class="fact-number">100+</div>
+                            <p>International Matches</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline Section -->
+    <section id="career" class="section career">
+        <div class="container">
+            <h2 class="section-title">Career Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2013</span>
+                        <h3>International Debut</h3>
+                        <p>Made her international debut against Bangladesh in a One Day International.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2015</span>
+                        <h3>First Test Century</h3>
+                        <p>Scored her maiden Test century against Australia, becoming the youngest Indian to score a Test hundred.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018</span>
+                        <h3>ICC Women's Cricketer of the Year</h3>
+                        <p>Won the prestigious Rachael Heyhoe-Flint Award for the ICC Women's Cricketer of the Year.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019</span>
+                        <h3>Top Ranked Batswoman</h3>
+                        <p>Reached the #1 position in the ICC ODI batting rankings for women.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021</span>
+                        <h3>T20 World Record</h3>
+                        <p>Became the fastest Indian to score 2,000 runs in Women's T20 International cricket.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023</span>
+                        <h3>Vice-Captain</h3>
+                        <p>Named as the vice-captain of the Indian women's cricket team, cementing her leadership role.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="section statistics">
+        <div class="container">
+            <h2 class="section-title">Career Statistics</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">3000+</div>
+                    <p class="stat-title">ODI Runs</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2500+</div>
+                    <p class="stat-title">T20I Runs</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <p class="stat-title">Test Matches</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45+</div>
+                    <p class="stat-title">Average</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="Smriti-batting.jpg" alt="Smriti Batting" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Cover Drive Perfection</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="smrithi-fielding.jpg" alt="Smriti Fielding" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Athletic Fielding</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="smrithi-century.avif" alt="Smriti Century" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Century Celebration</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="smrithi-cup.webp" alt="World Cup" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">ipl Cup Moments</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="smrithi-captain.jpg" alt="Team India" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Team Spirit</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="smrithi-fans.webp" alt="Fan Moment" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Connecting With Fans</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-container">
+                <div class="award-card">
+                    <div class="award-img">
+                        <img src="2018-cup.jpg" alt="ICC Award">
+                    </div>
+                    <div class="award-content">
+                        <h3 class="award-title">ICC Women's Cricketer of the Year</h3>
+                        <p class="award-year">2018</p>
+                        <p>Received the prestigious Rachael Heyhoe-Flint Award for her outstanding performance across all formats.</p>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="award-img">
+                        <img src="Arjuna-660.avif" alt="Arjuna Award">
+                    </div>
+                    <div class="award-content">
+                        <h3 class="award-title">Arjuna Award</h3>
+                        <p class="award-year">2018</p>
+                        <p>Honored with India's second-highest sporting award for her exceptional achievements in cricket.</p>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="award-img">
+                        <img src="cricketer-2017-18.webp" alt="BCCI Award">
+                    </div>
+                    <div class="award-content">
+                        <h3 class="award-title">BCCI Best Woman Cricketer</h3>
+                        <p class="award-year">2017-18</p>
+                        <p>Recognized by the Board of Control for Cricket in India for her outstanding contribution to women's cricket.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>contact@smritimandhana.com</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h4>Social Media</h4>
+                                <p>@smriti_mandhana</p>
+                            </div>
